@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 import os
 import socket
 from scapy.all import *
@@ -15,6 +14,7 @@ def PingScan(IPExample): #-pM --PingMap
     for x in IPs:
         print x
     return IPs
+
 def ArpScan(IPExample): #-aM --ArpMap
     IPBoceto = IPExample[:-1]
     IPs = []
@@ -28,6 +28,7 @@ def ArpScan(IPExample): #-aM --ArpMap
                 print ip
                 IPs.append(ip)
         return IPs
+
 def SockScan(IP): # -sTS --SockTCPScan
     ports = []
     for x in range(65535):
@@ -45,6 +46,7 @@ def SockScan(IP): # -sTS --SockTCPScan
             print "Puerto "+str(x)+" abierto"
 
     return ports
+
 def SockUDPScan(IP): #sUS --SockUDPScan
     ports = []
     for x in range(65535):
@@ -73,12 +75,12 @@ def halfSynScan(ip): #hsS
 
 def finScan(ip, time): #fS
     print """
-[!] ADVERTENCIA: este escaneo es poco preciso por lo que algunos resultados pueden ser incorrectos.
-Si necesitas mas precisión prueba a aumentar el timeout (por defecto 10)
+    [!] ADVERTENCIA: este escaneo es poco preciso por lo que algunos resultados pueden ser incorrectos.
+    Si necesitas mas precisión prueba a aumentar el timeout (por defecto 10)
 
-[!] ADVERTENCIA: Este escaneo no funciona en los siguientes equipos: Windows , Cisco , HP-UX , IRIX.
-Esto pasa porque estos equipos no siguen el estándar RFC 793 y envían un paquete RST cuando el puerto está abierto.
-Esto nos resultaría en todos los puertos cerrados."""
+    [!] ADVERTENCIA: Este escaneo no funciona en los siguientes equipos: Windows , Cisco , HP-UX , IRIX.
+    Esto pasa porque estos equipos no siguen el estándar RFC 793 y envían un paquete RST cuando el puerto está abierto.
+    Esto nos resultaría en todos los puertos cerrados."""
 
     ports = []
     for x in range(65535):

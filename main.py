@@ -1,5 +1,6 @@
 import sys
 import Analisis
+import Attacks
 
 if "-pM" in sys.argv:
     Analisis.PingScan(sys.argv[sys.argv.index("-pS") + 1])
@@ -27,12 +28,11 @@ if "-fS" in sys.argv:
 if "-hsS" in sys.argv:
     Analisis.halfSynScan(sys.argv[sys.argv.index("-hsS") + 1])
 
-if "-aM" in sys.argv:
-    Attacks.ARPSpoof(sys.argv[sys.argv.index("-sP") + 1],sys.argv[sys.argv.index("-sP") + 2])
-    sys.exit(1)
+if "-aMM" in sys.argv:
+    Attacks.ARPSpoof(sys.argv[sys.argv.index("-aMM") + 1] , sys.argv[sys.argv.index("-aMM") + 2])
 
 if "-aD" in sys.argv:
-    Attacks.ARPDos(sys.argv[sys.argv.index("-sP") + 1],sys.argv[sys.argv.index("-sP") + 2])
+    Attacks.ARPDos(sys.argv[sys.argv.index("-aD") + 1],sys.argv[sys.argv.index("-aD") + 2])
     sys.exit(1)
 
 if "-h" in sys.argv:
@@ -49,7 +49,7 @@ if "-h" in sys.argv:
     -hsS Make a halfSynScan. It need an IP like "192.168.1.126".
     ==ATTACKS==
     -aD Make an ARP man in the middle attack with the ip forwarding in 1
-    -aM Make an ARP man in the middle attack with the ip forwarding in 0
+    -aMM Make an ARP man in the middle attack with the ip forwarding in 0
     """
     sys.exit(1)
 else:
