@@ -2,7 +2,7 @@ import sys
 import Analisis
 import Attacks
 
-if "-pM" in sys.argv:
+if "-pS" in sys.argv:
     Analisis.PingScan(sys.argv[sys.argv.index("-pS") + 1])
     sys.exit(1)
 
