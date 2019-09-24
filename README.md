@@ -9,4 +9,4 @@
   HalfSyn scan: Se inicia una conexión normal enviando un syn y si el servidor responde con un syn/ack, se envia un FIN para terminar la                    conexión.
 Ataques:
   MitmDoS: Se hace un hombre en el medio entre la puerta de enlace y el objetivo y se desactiva el ip forwarding, haciendo que el objetivo            pueda acceder a internet.
-  Mitm: Se interpone la conexión entre el servidor y la puerta de enlace, permitiendo ver y modificar en tiempo real los apquetes.
+  Mitm: Se interpone la conexión entre el servidor y la puerta de enlace, permitiendo ver y modificar en tiempo real los paquetes.
